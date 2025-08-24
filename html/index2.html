@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel</title>
+    <link rel="stylesheet" href="../css/styles2.css" />
+  </head>
+  <body>
+    <main class="carousel">
+      <ul class="carousel-viewport">
+        <li id="carousel-slide1" class="carousel-slide">
+          <div class="carousel-snapper">
+            <a href="#carousel-slide4" class="carousel-prev"
+              >Go to the last slide</a
+            >
+            <a href="#carousel-slide2" class="carousel-next"
+              >Go to the next slide</a
+            >
+          </div>
+        </li>
+        <li id="carousel-slide2" class="carousel-slide">
+          <div class="carousel-snapper">
+            <a href="#carousel-slide1" class="carousel-prev"
+              >Go to the prev slide</a
+            >
+            <a href="#carousel-slide3" class="carousel-next"
+              >Go to the next slide</a
+            >
+          </div>
+        </li>
+
+        <li id="carousel-slide3" class="carousel-slide">
+          <div class="carousel-snapper">
+            <a href="#carousel-slide2" class="carousel-prev"
+              >Go to the prev slide</a
+            >
+            <a href="#carousel-slide4" class="carousel-next"
+              >Go to the last slide</a
+            >
+          </div>
+        </li>
+
+        <li id="carousel-slide4" class="carousel-slide">
+          <div class="carousel-snapper">
+            <a href="#carousel-slide3" class="carousel-prev"
+              >Go to the prev slide</a
+            >
+            <a href="#carousel-slide1" class="carousel-next"
+              >Go to the first slide</a
+            >
+          </div>
+        </li>
+      </ul>
+      <aside class="carousel-nav">
+        <ul class="carousel-nav-list">
+          <li class="carousel-nav-item">
+            <a href="#carousel-slide1" class="carousel-nav-button"
+              >Go to slide 1</a
+            >
+          </li>
+          <li class="carousel-nav-item">
+            <a href="#carousel-slide2" class="carousel-nav-button"
+              >Go to slide 2</a
+            >
+          </li>
+          <li class="carousel-nav-item">
+            <a href="#carousel-slide3" class="carousel-nav-button"
+              >Go to slide 3</a
+            >
+          </li>
+          <li class="carousel-nav-item">
+            <a href="#carousel-slide4" class="carousel-nav-button"
+              >Go to slide 4</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </main>
+  </body>
+</html>
