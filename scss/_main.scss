@@ -1,0 +1,30 @@
+/* stylelint-disable selector-type-no-unknown */
+/* stylelint-disable selector-pseudo-element-no-unknown */
+@use "variables" as vars;
+
+body {
+  overflow-x: hidden;
+}
+
+ul {
+  width: vars.$carousel-width;
+  height: vars.$carousel-height;
+  padding: vars.$carousel-padding;
+  display: flex;
+  gap: vars.$carousel-gap;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+
+  li {
+    list-style-type: none;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: vars.$carousel-padding;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+  }
+
+  li:nth-child(even) {
+    background-color: cyan;
+  }
+}

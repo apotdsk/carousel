@@ -1,0 +1,104 @@
+@use "variables" as vars;
+@use "mixins" as mx;
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel {
+  position: relative;
+  height: 100vh;
+}
+
+.carousel-viewport {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  counter-reset: item;
+}
+
+.carousel-slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  background-color: vars.$main-color;
+  color: vars.$text-color;
+  font-family: vars.$main-font;
+
+  .carousel-snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+
+    @include mx.center;
+
+    flex-direction: column;
+
+    .slide-text {
+      width: vars.$slide-text-width;
+      text-align: center;
+    }
+  }
+}
+
+.carousel-slide:nth-child(even) {
+  background-color: vars.$second-color;
+}
+
+.carousel-nav {
+  position: absolute;
+  right: 0;
+  bottom: vars.$nav-bottom-pos;
+  left: 0;
+  text-align: center;
+}
+
+.carousel-nav-list,
+.carousel-nav-item {
+  display: inline-block;
+}
+
+.carousel-nav-button {
+  display: inline-block;
+  width: vars.$nav-button-size;
+  height: vars.$nav-button-size;
+  background-color: vars.$text-color;
+  background-clip: content-box;
+  border-radius: 50%;
+  font-size: 0;
+  border: 2px solid black;
+  margin-right: vars.$nav-button-outline;
+  margin-left: vars.$nav-button-outline;
+}
+
+.carousel-prev,
+.carousel-next {
+  z-index: 1;
+  margin-top: 50vh;
+  position: absolute;
+  width: vars.$next-button-size;
+  height: vars.$next-button-size;
+  border-radius: 50%;
+  background-color: vars.$text-color;
+  color: vars.$button-color;
+  font-size: vars.$next-font-size;
+  text-decoration: none;
+
+  @include mx.center;
+}
+
+.carousel-prev {
+  left: vars.$side-gap;
+}
+
+.carousel-next {
+  right: vars.$side-gap;
+}
